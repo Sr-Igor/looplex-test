@@ -6,7 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "test": "jest",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint src --max-warnings=0",
+    "postinstall": "husky install",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:watch": "yarn test --watch",
+    "generate": "yarn plop --plopfile generators/plopfile.js",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
