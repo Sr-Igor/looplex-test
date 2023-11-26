@@ -30,6 +30,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     gap: ${theme.spacings.xsmall};
+    cursor: pointer;
   `}
 `;
 
