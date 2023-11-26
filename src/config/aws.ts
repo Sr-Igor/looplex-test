@@ -1,5 +1,7 @@
 //AWS
 import { S3 } from 'aws-sdk';
+
+//NOTE: In API cases is necessary to import dotenv
 // import dotenv from 'dotenv';
 // dotenv.config();
 

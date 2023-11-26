@@ -4,5 +4,20 @@
     "source.fixAll.eslint": true,
     "source.fixAll.tslint": true,
     "source.fixAll.stylelint": true
-  }
+  },
+  "cSpell.words": [
+    "antd",
+    "dayjs",
+    "persistor",
+    "Persistors",
+    "reduxjs",
+    "xlarge",
+    "xradius",
+    "xsmall",
+    "xxlarge",
+    "xxsmall",
+    "xxxlarge",
+    "xxxsmall",
+    "xxxxsmall"
+  ]
 }
