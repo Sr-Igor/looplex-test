@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -37,7 +37,32 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  ${({ theme }) => css`
+    html {
+      font-size: 62.5%;
+    }
 
+    body {
+      font-size: ${theme.font.sizes.medium};
+      background-color: ${theme.colors.gray_50};
+    }
+
+    body,
+    input,
+    textarea,
+    button {
+      font-family: ${theme.font.family};
+    }
+  `}
+
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyles;
