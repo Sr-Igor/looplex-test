@@ -99,6 +99,10 @@ exports[`<Main /> should render the component 1`] = `
   color: #f0efeb;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
 }
 
 .c5 {
@@ -123,16 +127,33 @@ exports[`<Main /> should render the component 1`] = `
   }
 }
 
-@media (max-width:450px) {
+@media (max-width:768px) {
   .c4 {
     font-size: 1.2rem;
   }
 }
 
 @media (max-width:450px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (max-width:768px) {
   .c7 {
-    width: 20px;
-    height: 20px;
+    display: none;
+  }
+}
+
+@media (max-width:768px) {
+  .c8 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c5 {
+    gap: 0.8rem;
   }
 }
 

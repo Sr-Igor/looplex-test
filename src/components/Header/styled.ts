@@ -55,8 +55,12 @@ export const Legend = styled.h3`
     font-weight: ${theme.font.bold};
     text-transform: uppercase;
 
-    ${media.lessThan('small')`
+    ${media.lessThan('medium')`
       font-size: ${theme.font.sizes.xxxsmall};
+    `}
+
+    ${media.lessThan('small')`
+     display: none;
     `}
   `}
 `;
@@ -92,9 +96,8 @@ export const Icon = styled.div`
     justify-content: center;
     background-color: ${theme.colors.yellow_300};
 
-    ${media.lessThan('small')`
-      width: 20px;
-      height: 20px;
+    ${media.lessThan('medium')`
+      display: none;
     `}
   `}
 `;
@@ -114,6 +117,14 @@ export const User = styled.p`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.gray_50};
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.xxxsmall};
+    `}
   `}
 `;
 
@@ -129,9 +140,9 @@ export const Action = styled(Button).attrs({
       color: ${theme.colors.yellow_300};
     }
 
-    /* ${media.lessThan('medium')`
+    ${media.lessThan('medium')`
       font-size: ${theme.font.sizes.xxxsmall};
-    `} */
+    `}
   `}
 `;
 
@@ -141,5 +152,9 @@ export const UserArea = styled.div`
     align-items: center;
     justify-content: center;
     gap: ${theme.spacings.xsmall};
+
+    ${media.lessThan('medium')`
+      gap: ${theme.spacings.xxxsmall};
+    `}
   `}
 `;
