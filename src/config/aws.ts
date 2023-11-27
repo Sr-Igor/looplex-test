@@ -15,7 +15,7 @@ export const s3Upload = async (file: File) => {
   if (!file.name) throw new Error('File type not found');
 
   // const params = {
-  //   Bucket: process.env.AWS_BUCKET_NAME as string,
+  //   Bucket: process.env.AWS_BUCKET_NAME,
   //   Key: file.name,
   //   Body: file,
   //   ACL: 'public-read',
@@ -38,7 +38,7 @@ export const s3Upload = async (file: File) => {
 
 export const s3Delete = async (filename: string) => {
   const params = {
-    Bucket: process.env.AWS_BUCKET_NAME as string,
+    Bucket: process.env.AWS_ACCESS_KEY_ID,
     Key: filename
   };
 

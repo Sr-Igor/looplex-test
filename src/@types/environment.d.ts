@@ -1,10 +1,14 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      NEXT_PUBLIC_BASE_URL: string;
-      NEXT_PUBLIC_USER_TYPE: string;
-      NEXT_PUBLIC_USER_TOKEN_EXPIRES_IN: string;
-      NEXT_PUBLIC_USER_TOKEN: string;
+      NEXTAUTH_SECRET: string;
+      GOOGLE_CLIENT_ID: string;
+      GOOGLE_CLIENT_SECRET: string;
+      GITHUB_ID: string;
+      GITHUB_SECRET: string;
+      AWS_ACCESS_KEY_ID: string;
+      AWS_SECRET_ACCESS_KEY: string;
+      AWS_REGION: string;
       NEXT_NODE_ENV: string;
     }
   }
