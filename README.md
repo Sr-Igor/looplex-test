@@ -11,7 +11,7 @@ tais como: Testes unitários, E2E, Storybook e etc.
 
 ## Scripts
 
-Rua with `yarn` or `npm`
+Run with `yarn` or `npm`
 
 `dev`
 `build`
