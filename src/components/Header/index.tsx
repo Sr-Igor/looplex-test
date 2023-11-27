@@ -53,7 +53,9 @@ export const Header = ({ onPressLogin, schema }: HeaderProps) => {
         </S.Avatar>
         {!!session?.user?.name && (
           <>
-            <S.Action icon={<BookOutlined />}>{schema.panel}</S.Action>
+            <S.Action onClick={() => push('/list')} icon={<BookOutlined />}>
+              {schema.panel}
+            </S.Action>
             <S.Action onClick={() => signOut()} icon={<LogoutOutlined />}>
               Sair
             </S.Action>
