@@ -1,5 +1,6 @@
 import { Button } from 'antd';
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Root = styled.div`
   ${({ theme }) => css`
@@ -26,6 +27,15 @@ export const ImageContent = styled.div`
     background-color: ${theme.colors.yellow_300};
     border-radius: 50%;
     overflow: hidden;
+
+    ${media.lessThan('medium')`
+      height: 40px;
+      width: 40px;
+    `}
+
+    ${media.lessThan('small')`
+      display: none;
+    `}
   `}
 `;
 
@@ -35,6 +45,14 @@ export const Infos = styled.div`
     flex-direction: column;
     gap: ${theme.spacings.xxxsmall};
     width: 200px;
+
+    ${media.lessThan('medium')`
+      width: 110px;
+    `}
+
+    ${media.lessThan('small')`
+      width: 80px;
+    `}
   `}
 `;
 
@@ -47,6 +65,10 @@ export const Email = styled.p`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.xxxsmall};
+    `}
   `}
 `;
 
@@ -59,6 +81,10 @@ export const Name = styled.p`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.xxxsmall};
+    `}
   `}
 `;
 
@@ -68,6 +94,10 @@ export const Birthday = styled.p`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.white};
     transition: all 0.3s ease-in-out;
+
+    ${media.lessThan('large')`
+      display: none;
+    `}
   `}
 `;
 

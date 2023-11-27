@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Root = styled.div`
   ${({ theme }) => css`
@@ -13,12 +14,16 @@ export const Root = styled.div`
 
 export const Section = styled.section<{ left: boolean }>`
   ${({ theme, left }) => css`
-    height: 200px;
+    height: auto;
     display: flex;
     width: 50%;
     gap: ${theme.spacings.xsmall};
     padding: ${theme.spacings.xsmall};
     align-self: ${left ? 'flex-start' : 'flex-end'};
+
+    ${media.lessThan('medium')`
+      width: 100%;
+    `}
   `}
 `;
 
@@ -57,5 +62,10 @@ export const Description = styled.p`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.gray_50};
     transition: all 0.3s ease-in-out;
+
+    ${media.lessThan('small')`
+      font-size: ${theme.font.sizes.xxxsmall};
+
+    `}
   `}
 `;

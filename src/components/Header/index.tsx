@@ -1,5 +1,5 @@
 import { signOut, useSession } from 'next-auth/react';
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useLayoutEffect, useState } from 'react';
 
@@ -38,7 +38,7 @@ export const Header = ({ onPressLogin, schema }: HeaderProps) => {
   return (
     <S.Root pos={!!windowPos}>
       <S.Content onClick={() => push('/')}>
-        <Image src={schema.logo} alt="Logo" height={50} />
+        <S.Logo src={schema.logo} alt="Logo" />
         <S.Legend>{schema.title}</S.Legend>
       </S.Content>
       <S.UserArea>

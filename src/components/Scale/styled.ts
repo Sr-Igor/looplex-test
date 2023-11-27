@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Button as ButtonAnt } from 'antd';
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.div`
   display: flex;
@@ -38,6 +39,10 @@ export const Rectangle = styled.div<{ left: number }>`
       margin-bottom: -1000px;
       opacity: 0;
     }
+
+    /* ${media.lessThan('large')`
+      display: none;
+    `} */
   `}
 `;
 
@@ -56,6 +61,10 @@ export const Title = styled.h1`
     color: ${theme.colors.gray_50};
     text-align: center;
     width: 100%;
+
+    ${media.lessThan('medium')`
+    font-size: ${theme.font.sizes.small};
+    `}
   `}
 `;
 
@@ -67,6 +76,10 @@ export const Subtitle = styled.h2`
     text-align: center;
     width: 100%;
     margin-bottom: 200px;
+
+    ${media.lessThan('large')`
+    font-size: ${theme.font.sizes.medium};
+    `}
   `}
 `;
 

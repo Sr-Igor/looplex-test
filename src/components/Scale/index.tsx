@@ -3,6 +3,8 @@
 import { StaticImageData } from 'next/image';
 import { useEffect } from 'react';
 
+import MediaMatch from 'components/MediaMatch';
+
 import * as S from './styled';
 
 export interface DropProps {
@@ -46,16 +48,18 @@ export const Scale = ({ loggedIn, onClick, schema }: DropProps) => {
         <S.Subtitle>{schema.subtitle}</S.Subtitle>
       </S.Information>
 
-      {schema.drops.reverse().map((item, key) => (
-        <S.Rectangle
-          className="slide"
-          id={`rectangle-${key}`}
-          key={`rectangle-${key}`}
-          left={schema.drops.length - key}
-        >
-          <S.Text>{item?.title}</S.Text>
-        </S.Rectangle>
-      ))}
+      <MediaMatch greaterThan="large">
+        {schema.drops.reverse().map((item, key) => (
+          <S.Rectangle
+            className="slide"
+            id={`rectangle-${key}`}
+            key={`rectangle-${key}`}
+            left={schema.drops.length - key}
+          >
+            <S.Text>{item?.title}</S.Text>
+          </S.Rectangle>
+        ))}
+      </MediaMatch>
 
       <S.Wrapper>
         <S.Title>{schema.title}</S.Title>

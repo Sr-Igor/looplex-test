@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Footer = styled.footer`
   ${({ theme }) => css`
@@ -24,6 +25,14 @@ export const Text = styled.p`
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.bold};
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.xxxsmall};
+    `}
+
+    ${media.lessThan('small')`
+      display: none;
+    `}
   `}
 `;
 
@@ -40,5 +49,9 @@ export const Anchor = styled(Link)`
       text-decoration: underline;
       color: ${theme.colors.purple_300};
     }
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.xxxsmall};
+    `}
   `}
 `;
