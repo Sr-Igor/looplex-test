@@ -101,6 +101,7 @@ export default function ListPage() {
     <Dashboard>
       <Title>{texts.title}</Title>
       <Button
+        data-testid="create-user-button"
         onClick={() => setInfos({ modal: true, user: {}, method: 'post' })}
         icon={<PlusOutlined />}
         style={{

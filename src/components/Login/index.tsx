@@ -38,12 +38,16 @@ export const Login = ({ open, setOpen, schema }: LoginProps) => {
           <S.Auth onClick={() => signIn('google')} icon={schema.googleIcon}>
             {schema.google}
           </S.Auth>
-          <S.NoAuth onClick={() => setCollapsed(!collapsed)}>
+          <S.NoAuth
+            data-testid="login-out-button"
+            onClick={() => setCollapsed(!collapsed)}
+          >
             {schema.outLogin}
           </S.NoAuth>
           <S.Collapsible in={collapsed}>
             <div className="collapse-container">
               <Input
+                data-testid="login-out-input"
                 prefix={<UserOutlined />}
                 name="name"
                 placeholder={schema.outLoginPlaceholder}
@@ -51,6 +55,7 @@ export const Login = ({ open, setOpen, schema }: LoginProps) => {
                 onChange={(e) => setName(e.target.value)}
               />
               <S.Enter
+                data-testid="login-out-enter"
                 onClick={() => signIn('credentials', { name })}
                 disabled={!name}
               >

@@ -213,6 +213,7 @@ exports[`<Main /> should render the component 1`] = `
         </div>
         <p
           class="c8"
+          data-testid="sign-in-button"
         >
           Faça login
         </p>

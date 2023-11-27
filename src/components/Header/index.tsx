@@ -49,14 +49,24 @@ export const Header = ({ onPressLogin, schema }: HeaderProps) => {
             )}
             {!session?.user?.name && <UserOutlined />}
           </S.Icon>
-          <S.User>{session?.user?.name ?? schema.do_login}</S.User>
+          <S.User data-testid="sign-in-button">
+            {session?.user?.name ?? schema.do_login}
+          </S.User>
         </S.Avatar>
         {!!session?.user?.name && (
           <>
-            <S.Action onClick={() => push('/list')} icon={<BookOutlined />}>
+            <S.Action
+              data-testid="panel-button"
+              onClick={() => push('/list')}
+              icon={<BookOutlined />}
+            >
               {schema.panel}
             </S.Action>
-            <S.Action onClick={() => signOut()} icon={<LogoutOutlined />}>
+            <S.Action
+              data-testid="sign-out-button"
+              onClick={() => signOut()}
+              icon={<LogoutOutlined />}
+            >
               Sair
             </S.Action>
           </>

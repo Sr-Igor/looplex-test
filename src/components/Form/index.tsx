@@ -50,7 +50,12 @@ export const FormList = ({
         onSubmit={(e) => onSubmit(e.formData as IUser)}
       >
         <S.Footer>
-          <S.Action danger onClick={onCancel} disabled={loading}>
+          <S.Action
+            data-testid="cancel-button"
+            danger
+            onClick={onCancel}
+            disabled={loading}
+          >
             {texts.cancel}
           </S.Action>
           <S.Action htmlType="submit" loading={loading}>
