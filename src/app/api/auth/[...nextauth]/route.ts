@@ -18,6 +18,8 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!
     }),
     CredentialsProvider({
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       async authorize(credentials: { name?: string }): Promise<DefaultUser> {
         const name = credentials?.name;
 
