@@ -14,12 +14,12 @@ import * as S from './styled';
 export const File = (rest: WidgetProps) => {
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState<File>();
-  const [cutImage, setCutImage] = useState<string>();
+  const [cutImage, setCutImage] = useState<string>(rest.value);
 
   const handleChange: UploadProps['onChange'] = (
     info: UploadChangeParam<UploadFile>
   ) => {
-    setFile(info.file.originFileObj);
+    setFile(info.file.originFileObj!);
     setOpen(true);
   };
 
