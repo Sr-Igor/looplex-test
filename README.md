@@ -2,6 +2,12 @@
 
 Olá meu nome é Igor Rezende e esse é o meu teste técnico!
 
+Vídeo explicativo: https://youtu.be/NtLaic9ZKg0
+`Por favor acesse o link acima para completar a explicação do projeto`
+
+# Start
+`yarn` && `yarn dev`
+
 
 # Importantes
 
